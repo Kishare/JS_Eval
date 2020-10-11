@@ -26,7 +26,6 @@ gridGenerator.prototype.renderTable = function(){
             td.style.width = '5px';
             td.style.height = '5px';
             tr.appendChild(td);
-            console.log('bendo');
         }table.appendChild(tr);
     }body.appendChild(table);
 }
