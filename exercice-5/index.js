@@ -1,8 +1,16 @@
 'use strict';
 
-var form = function form(){
+/**
+ * Represents a form.
+ * @constructor
+ */
 
+var form = function form(){
 }
+
+/**
+ * Represents and create a form.
+ */
 
 form.prototype.display = function(){
     var body = document.querySelector('body');
@@ -47,13 +55,17 @@ form.prototype.display = function(){
     inputs.forEach(el =>{
         el.style.marginBottom = '20px';
         el.style.width = '25vh';
-    });
-    
+    }); 
 }
+
+/**
+ * Checks and validates form inputs.
+ */
 
 form.prototype.validate = function(){
     var button = document.querySelector('#button');
     button.addEventListener('click', event =>{
+
         var firstNameCheck = RegExp(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/);
         var firstNameValue = document.querySelector('#first_name').value;
         if(firstNameCheck.test(firstNameValue)){
@@ -96,9 +108,12 @@ form.prototype.validate = function(){
         }else{
             alert("Mot de passe: NOT OK. Le mot de passe doit faire entre 6 caractères minimum et 30 caractères maximum");
         }
-
     })
 }
+
+/**
+ * Run
+ */
 
 form.prototype.run = function(){
     this.display();
