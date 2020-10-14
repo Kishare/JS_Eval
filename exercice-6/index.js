@@ -1,12 +1,18 @@
 'use strict';
 
+/**
+ * Represents a function that checks french phone numbers.
+ * @constructor
+ * @param {number} phoneNumber - (french) phone number.
+ */
+
 var checkPhoneNumber = function(phoneNumber){
     this.phoneNumber = phoneNumber;
 }
 
-checkPhoneNumber.prototype.run = function(){
-    this.check();
-}
+/**
+ * Checks if phone numbers are valid.
+ */
 
 checkPhoneNumber.prototype.check = function(){
     var numberCheck = RegExp(/^(0)[6|7|1]([ .-]?\d{2}){4}$/gm);
@@ -16,6 +22,14 @@ checkPhoneNumber.prototype.check = function(){
     }else{
         console.log(false);
     }
+}
+
+/**
+ * Run
+ */
+
+checkPhoneNumber.prototype.run = function(){
+    this.check();
 }
 
 var check01 = new checkPhoneNumber('0102030405');
