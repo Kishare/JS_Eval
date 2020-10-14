@@ -1,8 +1,18 @@
 'use strict';
 
+/**
+ * Represents a function that checks if string in parameter is a palindrome.
+ * @constructor
+ * @param {string} str - A character string.
+ */
+
 var checkPalindrome = function checkPalindrome(str){
     this.str = str;
 }
+
+/**
+ * Check if palindrome.
+ */
 
 checkPalindrome.prototype.isPalindrome = function(){
     var str = this.str;
@@ -15,12 +25,16 @@ checkPalindrome.prototype.isPalindrome = function(){
              alert(false);
         }
     }
-    alert(true)
+    alert(true);
 }
+
+/**
+ * Run
+ */
 
 checkPalindrome.prototype.run = function(){
     this.isPalindrome();
 }
 
-var palindromek1 = new checkPalindrome('ALILA');
+var palindrome1 = new checkPalindrome('ressasser');
 palindrome1.run();
