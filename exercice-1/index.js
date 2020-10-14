@@ -13,7 +13,7 @@ var gridGenerator = function gridGenerator(xAxis, yAxis){
 }
 
 /**
- * Displays the gridGenerator.
+ * Creates and displays the gridGenerator.
  */
 
 gridGenerator.prototype.renderTable = function(){
