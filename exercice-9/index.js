@@ -21,11 +21,12 @@ checkPalindrome.prototype.isPalindrome = function(){
 
     for(var i = 0; i < cleanStr.length / 2; i++){
         if(cleanStr[i] !== cleanStr[cleanStr.length - 1 - i]){
-            alert('no');
-             alert(false);
+             alert(cleanStr + ' is not a palindrome');
+             return false;
         }
     }
-    alert(true);
+    alert(cleanStr + ' is a palindrome');
+    return true;
 }
 
 /**
