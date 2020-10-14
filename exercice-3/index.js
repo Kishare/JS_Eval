@@ -4,12 +4,17 @@ var xWins = 0;
 var oWins = 0;
 var turnNumber = 0;
 
+/**
+ * Represents a morpion game.
+ * @constructor
+ */
+
 var MyMorpionXO = function MyMorpionXO(){
 }
 
-MyMorpionXO.prototype.run = function(){
-    if(!document.querySelector('table'))this.game();
-}
+/**
+ * Creates board game and displays it.
+ */
 
 MyMorpionXO.prototype.game = function(){
     var body = document.querySelector('body');
@@ -29,7 +34,6 @@ MyMorpionXO.prototype.game = function(){
     }body.appendChild(board);
 
     var cases = document.querySelectorAll('.board-case');
-    console.log(cases);
     cases.forEach(el => el.addEventListener ('click', event =>{
         if(turnNumber % 2 == 0){
            if(!el.textContent) el.textContent = 'X';
@@ -41,6 +45,10 @@ MyMorpionXO.prototype.game = function(){
     }));
    
 }
+
+/**
+ * Check if a round is won.
+ */
 
 MyMorpionXO.prototype.isWon = function(){
     var cases = document.querySelectorAll('.board-case');
@@ -75,6 +83,10 @@ MyMorpionXO.prototype.isWon = function(){
 
 }
 
+/**
+ * Displays winner at the end of a round.
+ */
+
 MyMorpionXO.prototype.displayWinner = function(winner){
 
     if(winner === undefined){
@@ -85,7 +97,6 @@ MyMorpionXO.prototype.displayWinner = function(winner){
         xWins++;
         if(xWins >= 3){
             alert('Bravo ' + winner +', tu as gagné trois rounds, tu remportes la partie!');
-        console.log(xWins);
         xWins = 0;
         oWins = 0;
         }
@@ -95,7 +106,6 @@ MyMorpionXO.prototype.displayWinner = function(winner){
         oWins++;
         if(oWins >= 3){
             alert('Bravo ' + winner +', tu as gagné trois rounds, tu remportes la partie!');
-        console.log(oWins);
         xWins = 0;
         oWins = 0;
         }
@@ -103,6 +113,14 @@ MyMorpionXO.prototype.displayWinner = function(winner){
 
     var cases = document.querySelectorAll('.board-case');
     cases.forEach(el => el.textContent = '');
+}
+
+/**
+ * Run
+ */
+
+MyMorpionXO.prototype.run = function(){
+    if(!document.querySelector('table'))this.game();
 }
 
 var morpion = new MyMorpionXO();
