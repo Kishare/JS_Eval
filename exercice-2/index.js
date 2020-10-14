@@ -12,9 +12,9 @@ var drawBar = function drawBar(sum, nbr){
     this.nbr = nbr;
 }
 
-drawBar.prototype.run = function(){
-    this.display();
-}
+/**
+ * Creates and displays the drawbar.
+ */
 
 drawBar.prototype.display = function(){
     var progress = document.createElement('div');
@@ -27,8 +27,16 @@ drawBar.prototype.display = function(){
     bar.style.height = '50px';
     progress.appendChild(bar);
     document.body.appendChild(progress);
-
 }
+
+/**
+ * Run
+ */
+
+drawBar.prototype.run = function(){
+    this.display();
+}
+
 
 var loadingBar = new drawBar(100, 10);
 loadingBar.run();
