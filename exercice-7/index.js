@@ -3,7 +3,7 @@
 /**
  * Represents a function that compute notes.
  * @constructor
- * @param {array} array - Multiples values in an array representing grades.
+ * @param array[] array - Multiples values in an array representing grades.
  */
 
 var computeNotes = function computeNotes(array){
