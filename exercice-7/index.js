@@ -27,8 +27,8 @@ computeNotes.prototype.calculate = function(){
  * Run
  */
 
-checkPhoneNumber.prototype.run = function(){
-    this.check();
+computeNotes.prototype.run = function(){
+    this.calculate();
 }
 
 var moy1 = new computeNotes([10, 13, 13, 12, 15, 12, 11, 16, 14]);
