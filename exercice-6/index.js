@@ -18,9 +18,11 @@ checkPhoneNumber.prototype.check = function(){
     var numberCheck = RegExp(/^(0)[6|7|1]([ .-]?\d{2}){4}$/gm);
     var number = this.phoneNumber;
     if(numberCheck.test(number)){
-        alert(number + ' returns ' + true);
+        alert(number + ' is valid');
+        return true;
     }else{
-        alert(number + ' returns ' + false);
+        alert(number + ' is not valid');
+        return false;
     }
 }
 
