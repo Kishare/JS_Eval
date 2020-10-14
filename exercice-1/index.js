@@ -7,11 +7,14 @@
  * @param {number} yAxis - Vertical axis.
  */
 
-
 var gridGenerator = function gridGenerator(xAxis, yAxis){
     this.xAxis = xAxis;
     this.yAxis = yAxis;
 }
+
+/**
+ * Displays the gridGenerator.
+ */
 
 gridGenerator.prototype.renderTable = function(){
     var body = document.querySelector('body');
@@ -30,12 +33,9 @@ gridGenerator.prototype.renderTable = function(){
     }body.appendChild(table);
 }
 
-gridGenerator.prototype.run = function(){
-    this.renderTable();
-    setInterval(function(){
-      this.randomColor()
-      }.bind(this), 1000);
-}
+/**
+ * Set random colors
+ */
 
 gridGenerator.prototype.randomColor = function(){
     var td_list = document.querySelectorAll('td');
@@ -43,6 +43,17 @@ gridGenerator.prototype.randomColor = function(){
       var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
       td_list.style.backgroundColor = randomColor;
     });
+}
+
+/**
+ * Run
+ */
+
+gridGenerator.prototype.run = function(){
+    this.renderTable();
+    setInterval(function(){
+      this.randomColor()
+      }.bind(this), 1000);
 }
 
 var tab = new gridGenerator(8, 10);
