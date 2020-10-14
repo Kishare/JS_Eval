@@ -1,6 +1,7 @@
 'use strict';
 
-var computeNotes = function computeNotes(){
+var computeNotes = function computeNotes(array){
+    this.array = array;
 }
 
 computeNotes.prototype.run = function(){
@@ -8,7 +9,7 @@ computeNotes.prototype.run = function(){
 }
 
 computeNotes.prototype.calculate = function(){
-    var array = [10, 13, 13, 12, 15, 12, 11, 16, 14];
+    var array = this.array;
     var moyArray = 0;
     for (var i of array){
     moyArray += i;
@@ -16,5 +17,6 @@ computeNotes.prototype.calculate = function(){
     console.log(moyArray);
 }
 
-var launch = new computeNotes();
-launch.run();
+var moy1 = new computeNotes([10, 13, 13, 12, 15, 12, 11, 16, 14]);
+moy1.run();
+
