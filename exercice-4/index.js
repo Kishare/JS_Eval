@@ -1,7 +1,16 @@
 'use strict';
 
+/**
+ * Represents the world map.
+ * @constructor
+ */
+
 var worldMap = function worldMap(){
 }
+
+/**
+ * Displays world map.
+ */
 
 worldMap.prototype.renderWorldMap = function(){
     document.body.insertAdjacentHTML('afterbegin', `
@@ -734,6 +743,10 @@ worldMap.prototype.renderWorldMap = function(){
      <div id="country"></div>`);
 }
 
+/**
+ * Displays country name on hover/click.
+ */
+
 worldMap.prototype.displayCountryName = function(){
     var paths = document.getElementsByTagName('path');
     var country = document.getElementById('country');
@@ -759,6 +772,10 @@ worldMap.prototype.displayCountryName = function(){
      }
 }
 
+/**
+ * Switch colors on hover/click.
+ */
+
 worldMap.prototype.switchColor = function(){
     var paths = document.getElementsByTagName('path');
     for (var i = 0; i < paths.length; i++){
@@ -779,6 +796,10 @@ worldMap.prototype.switchColor = function(){
         })
     }
 }
+
+/**
+ * Run
+ */
 
 worldMap.prototype.run = function(){
     this.renderWorldMap();
